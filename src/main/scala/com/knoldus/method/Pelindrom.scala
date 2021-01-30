@@ -11,10 +11,9 @@ case class Pelindrom() {
       reversedInteger = reversedInteger * 10 + remainder
       num /= 10
     }
-    if (originalInteger == reversedInteger) {
-      println("Number is pelindrom")
-    }
-    return true
-  };
-}
+    if (originalInteger == reversedInteger)
+      true
+    else
+      false
+  }};
 
