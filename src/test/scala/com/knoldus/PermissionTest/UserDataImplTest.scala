@@ -9,7 +9,7 @@ class UserDataImplTest extends AnyFlatSpec {
 
   "A UserImpl" should "create User because not exist in db" in{
 
-    val newUser = UserData("Sonu","Kumar","Knoldus","sonuraj1926@gmail.com")
+    val newUser = UserData("Dheeraj","Mishra","Knoldus","Dheeraj.mishra@knoldus.com")
     val mockuserValidator = mock[UserValidator]
     when(mockuserValidator.userIsValid((newUser))) thenReturn(true)
 
@@ -20,7 +20,7 @@ class UserDataImplTest extends AnyFlatSpec {
   }
   it should "not create User because emaild is not valid" in{
 
-    val newUser = User("Varun ","Singh","varunsinghgmail.com","knoldus")
+    val newUser = User("Dheeraj ","Mishra","Dheerajgmail.com","knoldus")
     val mockuserValidator = mock[UserValidator]
     when(mockuserValidator.userIsValid((newUser))) thenReturn(false)
 

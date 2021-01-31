@@ -7,7 +7,7 @@ class UserValidator {
   def userIsValid(user: UserData): Boolean= {
     val database: ReadCompany = new ReadCompany()
 
-    val dbResult: Option[CompanyData] = database.getCompanyByName(user.CompanyData)
+    val dbResult: Option[CompanyData] = database.getCompanyByName(user.company)
 
     //email should be valid
     val emailDatabase: EmailValidator = new EmailValidator()
