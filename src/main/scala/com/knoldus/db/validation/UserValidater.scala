@@ -1,11 +1,13 @@
 package com.knoldus.db.validation
-import com.knoldus.db.Company
-import com.knoldus.db.datamodels.{CompanyData, CompanyUser}
-class UserValidater{
-  def userIsValid(user: CompanyUser): Boolean= {
-    val database: Company = new Company()
+import  com.knoldus.db.data.ReadCompany
+import com.knoldus.db.datamodels.{CompanyData, UserData}
 
-    val dbResult: Option[Company] = database.getCompanyByName(user.CompanyData)
+
+class UserValidator {
+  def userIsValid(user: UserData): Boolean= {
+    val database: ReadCompany = new ReadCompany()
+
+    val dbResult: Option[CompanyData] = database.getCompanyByName(user.CompanyData)
 
     //email should be valid
     val emailDatabase: EmailValidator = new EmailValidator()
